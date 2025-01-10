@@ -1,6 +1,6 @@
 # Seven Pennies E-commerce
 
-[Seven Pennies]([https://www.openai.com](https://mahesvara.online/) "Visit website")
+[Seven Pennies](https://mahesvara.online/)
 
 A modern e-commerce application built with React, TypeScript, and Vite, featuring a vintage-inspired design theme.
 
