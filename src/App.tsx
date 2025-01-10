@@ -12,9 +12,9 @@ function App() {
   return (
     <CartProvider>
       <Router>
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen font-retro crt-effect bg-retro-background text-retro-text">
           <Navbar />
-          <main className="flex-grow bg-gray-100">
+          <main className="flex-grow">
             <div className="container mx-auto px-4 py-8">
               <Routes>
                 <Route path="/" element={<Home />} />

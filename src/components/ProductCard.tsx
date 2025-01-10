@@ -10,7 +10,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const { addToCart } = useCart();
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="bg-retro-background border-4 border-retro-secondary shadow-pixel rounded-lg overflow-hidden">
       <img
         src={product.images[0]}
         alt={product.title}
@@ -18,24 +18,24 @@ const ProductCard = ({ product }: ProductCardProps) => {
       />
       <div className="p-6 flex flex-col h-72">
         <div>
-          <h3 className="text-lg font-semibold mb-2 h-14 line-clamp-2">
+          <h3 className="text-base font-retro mb-2 h-14 line-clamp-2 text-retro-text">
             {product.title}
           </h3>
-          <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full mb-3">
+          <span className="inline-block px-3 py-1 bg-retro-primary text-retro-text text-xs rounded-full mb-3">
             {product.category.name}
           </span>
-          <p className="text-gray-600 text-sm h-12 line-clamp-2 mb-6">
+          <p className="text-retro-text/80 text-xs h-12 line-clamp-2 mb-6">
             {product.description}
           </p>
         </div>
         <div className="flex items-center justify-between gap-2">
-          <span className="px-3 py-1.5 text-xl font-bold text-blue-600 bg-gray-50 rounded-lg">
+          <span className="px-3 py-1.5 text-lg font-retro text-retro-accent bg-retro-primary rounded-lg">
             ${product.price}
           </span>
           <div className="flex gap-2">
             <button
               onClick={() => addToCart(product)}
-              className="p-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center w-9 h-9"
+              className="p-1.5 bg-retro-accent text-retro-background rounded-lg hover:bg-retro-secondary transition-colors flex items-center justify-center w-9 h-9"
               title="Add to Cart"
             >
               <svg
@@ -50,7 +50,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             </button>
             <Link
               to={`/product/${product.id}`}
-              className="px-3 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-3 py-1.5 bg-retro-accent text-retro-background rounded-lg hover:bg-retro-secondary transition-colors"
             >
               View Details
             </Link>
