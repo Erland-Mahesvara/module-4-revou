@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Product } from "../types";
-import { useCart } from "../context/CartContext";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -83,22 +81,23 @@ const ProductDetail = () => {
           <p className="font-body text-vintage-coffee/80 text-lg leading-relaxed">
             {product.description}
           </p>
-          <div className="price-tag text-3xl">${product.price}</div>
-          <button
-            onClick={() => addToCart(product)}
-            className="btn w-full py-4 text-lg font-bold flex items-center justify-center gap-3"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="currentColor"
-            >
-              <path d="M462.31-616.36v-121.49H340.15v-50.25h122.16v-121.49h50.25v121.49h121.23v50.25H512.56v121.49h-50.25ZM290.88-97.69q-27.64 0-46.85-19.35t-19.21-47q0-27.27 19.35-46.54t47-19.27q27.64 0 46.85 19.41 19.21 19.42 19.21 46.81 0 27.4-19.35 46.67-19.35 19.27-47 19.27Zm389.59 0q-27.54 0-46.67-19.35-19.13-19.35-19.13-47 0-27.27 19.27-46.54t46.81-19.27q27.53 0 46.8 19.41 19.27 19.42 19.27 46.81 0 27.4-19.35 46.67-19.35 19.27-47 19.27ZM70.82-819.74V-870h107.03l166.92 354.21h276.51q3.46 0 6.16-1.74 2.69-1.73 4.61-4.8L782.1-788.1h56.67L681.85-499.59q-9.97 16.64-25.75 26.63-15.78 9.98-34.25 9.98H327.38l-52 96.26q-3.07 4.62-.32 10 2.76 5.39 8.79 5.39h462.97v50.25H288.05q-36.13 0-54.77-29.86t-1.89-60.39l61.94-112.36L145.9-819.74H70.82Z" />
-            </svg>
-            Add to Cart
-          </button>
+          <div className="text-3xl font-bold text-vintage-sepia mb-6">
+            ${product.price}
+          </div>
+          <div>
+            <button className="w-full btn bg-vintage-rust text-vintage-cream hover:bg-vintage-gold py-4 text-lg font-bold flex items-center justify-center gap-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="32px"
+                viewBox="0 -960 960 960"
+                width="32px"
+                fill="currentColor"
+              >
+                <path d="M462.31-616.36v-121.49H340.15v-50.25h122.16v-121.49h50.25v121.49h121.23v50.25H512.56v121.49h-50.25ZM290.88-97.69q-27.64 0-46.85-19.35t-19.21-47q0-27.27 19.35-46.54t47-19.27q27.64 0 46.85 19.41 19.21 19.42 19.21 46.81 0 27.4-19.35 46.67-19.35 19.27-47 19.27Zm389.59 0q-27.54 0-46.67-19.35-19.13-19.35-19.13-47 0-27.27 19.27-46.54t46.81-19.27q27.53 0 46.8 19.41 19.27 19.42 19.27 46.81 0 27.4-19.35 46.67-19.35 19.27-47 19.27ZM70.82-819.74V-870h107.03l166.92 354.21h276.51q3.46 0 6.16-1.74 2.69-1.73 4.61-4.8L782.1-788.1h56.67L681.85-499.59q-9.97 16.64-25.75 26.63-15.78 9.98-34.25 9.98H327.38l-52 96.26q-3.07 4.62-.32 10 2.76 5.39 8.79 5.39h462.97v50.25H288.05q-36.13 0-54.77-29.86t-1.89-60.39l61.94-112.36L145.9-819.74H70.82Z" />
+              </svg>
+              Cart
+            </button>
+          </div>
         </div>
       </div>
     </div>
