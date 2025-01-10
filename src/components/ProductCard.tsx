@@ -32,7 +32,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <div className="flex gap-2">
             <Link
               to={`/product/${product.id}`}
-              className="flex-1 btn bg-vintage-paper text-vintage-coffee hover:bg-vintage-cream flex items-center justify-center leading-none py-3"
+              className="flex-1 btn bg-vintage-paper text-vintage-coffee hover:bg-vintage-cream flex items-center justify-center"
             >
               View Details
             </Link>

@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext";
 import { useState } from "react";
 
 const Navbar = () => {
-  const { state } = useCart();
-  const cartItemCount = state.items.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = (e: React.FormEvent) => {
@@ -79,11 +73,6 @@ const Navbar = () => {
               className="text-vintage-paper/80 hover:text-vintage-gold transition-colors flex items-center"
             >
               Cart
-              {cartItemCount > 0 && (
-                <span className="ml-1 px-2 py-0.5 bg-vintage-rust text-vintage-cream text-xs rounded-full font-bold">
-                  {cartItemCount}
-                </span>
-              )}
             </Link>
           </div>
         </div>
