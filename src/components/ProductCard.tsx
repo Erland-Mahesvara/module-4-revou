@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import { Product } from "../types";
+import { useCart } from "../context/CartContext";
 
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const { addToCart } = useCart();
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <img
@@ -13,7 +16,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         alt={product.title}
         className="w-full h-80 object-cover"
       />
-      <div className="p-6 flex flex-col h-auto">
+      <div className="p-6 flex flex-col h-72">
         <div>
           <h3 className="text-lg font-semibold mb-2 h-14 line-clamp-2">
             {product.title}
@@ -26,11 +29,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </p>
         </div>
         <div className="flex items-center justify-between gap-2">
-          <span className="px-3 py-1.5 text-xl font-bold text-blue-600 rounded-lg">
+          <span className="px-3 py-1.5 text-xl font-bold text-blue-600 bg-gray-50 rounded-lg">
             ${product.price}
           </span>
           <div className="flex gap-2">
-            <button className="p-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center w-9 h-9">
+            <button
+              onClick={() => addToCart(product)}
+              className="p-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center w-9 h-9"
+              title="Add to Cart"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="20px"
