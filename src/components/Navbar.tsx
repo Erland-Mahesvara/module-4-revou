@@ -12,16 +12,17 @@ const Navbar = () => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
+    // Search functionality will be implemented later
     console.log("Searching for:", searchQuery);
   };
 
   return (
-    <nav className="bg-retro-primary border-b-4 border-retro-secondary shadow-pixel">
+    <nav className="bg-white shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex items-center h-16">
           <div className="w-48">
-            <Link to="/" className="text-lg font-retro text-retro-text">
-              🕹️ GameShop
+            <Link to="/" className="text-2xl font-bold text-blue-600">
+              ShopSmart 🛒
             </Link>
           </div>
 
@@ -33,11 +34,11 @@ const Navbar = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search products..."
-                  className="w-full px-4 py-2 pl-10 pr-8 border-4 border-retro-secondary bg-retro-background text-retro-text placeholder-retro-text/50 focus:outline-none focus:border-retro-accent"
+                  className="w-full px-4 py-2 pl-10 pr-8 border rounded-lg focus:outline-none focus:border-blue-500"
                 />
                 <button
                   type="submit"
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-retro-text"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -59,25 +60,19 @@ const Navbar = () => {
           </div>
 
           <div className="w-48 flex items-center justify-end space-x-4">
-            <Link
-              to="/login"
-              className="text-sm font-retro text-retro-text hover:text-retro-accent"
-            >
+            <Link to="/login" className="text-gray-700 hover:text-blue-600">
               Login
             </Link>
-            <Link
-              to="/register"
-              className="text-sm font-retro text-retro-text hover:text-retro-accent"
-            >
+            <Link to="/register" className="text-gray-700 hover:text-blue-600">
               Register
             </Link>
             <Link
               to="/cart"
-              className="text-sm font-retro text-retro-text hover:text-retro-accent flex items-center"
+              className="text-gray-700 hover:text-blue-600 flex items-center"
             >
               Cart
               {cartItemCount > 0 && (
-                <span className="ml-1 px-2 py-0.5 bg-retro-accent text-retro-background text-xs rounded-full">
+                <span className="ml-1 px-2 py-0.5 bg-blue-600 text-white text-xs rounded-full">
                   {cartItemCount}
                 </span>
               )}

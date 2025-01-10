@@ -1,53 +1,38 @@
 const Footer = () => {
   return (
-    <footer className="bg-retro-primary border-t-4 border-retro-secondary shadow-pixel">
+    <footer className="bg-white mt-12 border-t">
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-base font-retro mb-4 text-retro-text">
-              About GameShop
-            </h3>
-            <p className="text-retro-text/80 text-sm">
-              Your ultimate retro gaming destination. Level up your collection!
+            <h3 className="text-lg font-semibold mb-4">About ShopSmart</h3>
+            <p className="text-gray-600">
+              Your one-stop destination for quality products at great prices.
+              Shop smart, live better.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-base font-retro mb-4 text-retro-text">
-              Quick Links
-            </h3>
+            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-retro-text hover:text-retro-accent"
-                >
+                <a href="#" className="text-gray-600 hover:text-blue-600">
                   About Us
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-retro-text hover:text-retro-accent"
-                >
+                <a href="#" className="text-gray-600 hover:text-blue-600">
                   Contact Us
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-retro-text hover:text-retro-accent"
-                >
+                <a href="#" className="text-gray-600 hover:text-blue-600">
                   FAQs
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-retro-text hover:text-retro-accent"
-                >
+                <a href="#" className="text-gray-600 hover:text-blue-600">
                   Shipping Info
                 </a>
               </li>
@@ -56,39 +41,25 @@ const Footer = () => {
 
           {/* Customer Service */}
           <div>
-            <h3 className="text-base font-retro mb-4 text-retro-text">
-              Customer Service
-            </h3>
+            <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-retro-text hover:text-retro-accent"
-                >
+                <a href="#" className="text-gray-600 hover:text-blue-600">
                   Track Order
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-retro-text hover:text-retro-accent"
-                >
+                <a href="#" className="text-gray-600 hover:text-blue-600">
                   Return Policy
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-retro-text hover:text-retro-accent"
-                >
+                <a href="#" className="text-gray-600 hover:text-blue-600">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm text-retro-text hover:text-retro-accent"
-                >
+                <a href="#" className="text-gray-600 hover:text-blue-600">
                   Terms & Conditions
                 </a>
               </li>
@@ -97,18 +68,16 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-base font-retro mb-4 text-retro-text">
-              Contact Us
-            </h3>
+            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-retro-text">
+              <li className="text-gray-600">
                 <span className="font-semibold">Email:</span>{" "}
-                support@gameshop.com
+                support@shopsmart.com
               </li>
-              <li className="text-sm text-retro-text">
+              <li className="text-gray-600">
                 <span className="font-semibold">Phone:</span> +1 (555) 123-4567
               </li>
-              <li className="text-sm text-retro-text">
+              <li className="text-gray-600">
                 <span className="font-semibold">Hours:</span> Mon-Fri: 9AM - 6PM
               </li>
             </ul>
@@ -116,34 +85,22 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t-4 border-retro-secondary mt-8 pt-8">
+        <div className="border-t mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-retro-text text-xs">
-              © {new Date().getFullYear()} GameShop. All rights reserved.
+            <p className="text-gray-600 text-sm">
+              © 2024 ShopSmart. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
-              <a
-                href="#"
-                className="text-sm text-retro-text hover:text-retro-accent"
-              >
+              <a href="#" className="text-gray-600 hover:text-blue-600">
                 Facebook
               </a>
-              <a
-                href="#"
-                className="text-sm text-retro-text hover:text-retro-accent"
-              >
+              <a href="#" className="text-gray-600 hover:text-blue-600">
                 Twitter
               </a>
-              <a
-                href="#"
-                className="text-sm text-retro-text hover:text-retro-accent"
-              >
+              <a href="#" className="text-gray-600 hover:text-blue-600">
                 Instagram
               </a>
-              <a
-                href="#"
-                className="text-sm text-retro-text hover:text-retro-accent"
-              >
+              <a href="#" className="text-gray-600 hover:text-blue-600">
                 LinkedIn
               </a>
             </div>
