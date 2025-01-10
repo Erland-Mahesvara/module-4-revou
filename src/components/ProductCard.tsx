@@ -13,14 +13,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
         alt={product.title}
         className="w-full h-80 object-cover"
       />
-      <div className="p-4 flex flex-col h-56">
-        <div className="flex-1">
-          <h3 className="text-lg font-semibold mb-2">{product.title}</h3>
-          <p className="text-gray-600 text-sm line-clamp-2">
+      <div className="p-6 flex flex-col h-64">
+        <div className="mb-6">
+          <h3 className="text-lg font-semibold mb-3">{product.title}</h3>
+          <p className="text-gray-600 text-sm h-12 line-clamp-2">
             {product.description}
           </p>
         </div>
-        <div className="flex justify-between items-center mt-4">
+        <div className="mt-auto flex justify-between items-center">
           <span className="text-xl font-bold text-blue-600">
             ${product.price}
           </span>
