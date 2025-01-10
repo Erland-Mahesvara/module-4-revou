@@ -34,7 +34,9 @@ const ProductDetail = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="text-xl text-gray-600">Loading...</div>
+        <div className="font-display text-2xl text-vintage-coffee/60">
+          Loading...
+        </div>
       </div>
     );
   }
@@ -42,7 +44,7 @@ const ProductDetail = () => {
   if (error || !product) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="text-xl text-red-600">
+        <div className="font-display text-2xl text-vintage-rust">
           {error || "Product not found"}
         </div>
       </div>
@@ -50,13 +52,13 @@ const ProductDetail = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
+    <div className="card">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-4">
           <img
             src={product.images[0]}
             alt={product.title}
-            className="w-full h-96 object-cover rounded-lg"
+            className="w-full h-96 object-cover border border-vintage-sepia/10"
           />
           <div className="grid grid-cols-4 gap-2">
             {product.images.slice(1).map((image, index) => (
@@ -64,23 +66,27 @@ const ProductDetail = () => {
                 key={index}
                 src={image}
                 alt={`${product.title} ${index + 2}`}
-                className="w-full h-24 object-cover rounded-lg cursor-pointer"
+                className="w-full h-24 object-cover cursor-pointer 
+                         border border-vintage-sepia/10 hover:border-vintage-gold 
+                         transition-all duration-300 hover:shadow-md"
               />
             ))}
           </div>
         </div>
         <div className="space-y-4">
-          <h1 className="text-3xl font-bold">{product.title}</h1>
-          <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">
+          <h1 className="font-display text-4xl font-bold text-vintage-sepia">
+            {product.title}
+          </h1>
+          <span className="inline-block px-4 py-1.5 bg-vintage-paper text-vintage-coffee font-body text-sm">
             {product.category.name}
           </span>
-          <p className="text-gray-600">{product.description}</p>
-          <div className="text-2xl font-bold text-blue-600">
-            ${product.price}
-          </div>
+          <p className="font-body text-vintage-coffee/80 text-lg leading-relaxed">
+            {product.description}
+          </p>
+          <div className="price-tag text-3xl">${product.price}</div>
           <button
             onClick={() => addToCart(product)}
-            className="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-2"
+            className="btn w-full py-4 text-lg font-bold flex items-center justify-center gap-3"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

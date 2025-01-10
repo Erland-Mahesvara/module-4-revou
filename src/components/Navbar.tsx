@@ -12,20 +12,19 @@ const Navbar = () => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Search functionality will be implemented later
     console.log("Searching for:", searchQuery);
   };
 
   return (
-    <nav className="bg-vintage-cream border-b border-vintage-sepia/20 shadow-md">
+    <nav className="bg-vintage-coffee border-b border-vintage-cream/10 shadow-md">
       <div className="container mx-auto px-6">
         <div className="flex items-center h-20">
           <div className="w-48">
             <Link
               to="/"
-              className="text-3xl font-display font-bold text-vintage-sepia hover:text-vintage-gold transition-colors"
+              className="text-3xl font-display font-bold text-vintage-cream hover:text-vintage-gold transition-colors"
             >
-              ShopSmart 🛒
+              Seven Pennies
             </Link>
           </div>
 
@@ -37,11 +36,11 @@ const Navbar = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search products..."
-                  className="input w-full"
+                  className="input w-full pl-10 bg-vintage-cream"
                 />
                 <button
                   type="submit"
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-vintage-sepia/60"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-vintage-coffee/60 pointer-events-none"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,13 +62,22 @@ const Navbar = () => {
           </div>
 
           <div className="w-48 flex items-center justify-end space-x-6">
-            <Link to="/login" className="nav-link">
+            <Link
+              to="/login"
+              className="text-vintage-paper/80 hover:text-vintage-gold transition-colors"
+            >
               Login
             </Link>
-            <Link to="/register" className="nav-link">
+            <Link
+              to="/register"
+              className="text-vintage-paper/80 hover:text-vintage-gold transition-colors"
+            >
               Register
             </Link>
-            <Link to="/cart" className="nav-link flex items-center">
+            <Link
+              to="/cart"
+              className="text-vintage-paper/80 hover:text-vintage-gold transition-colors flex items-center"
+            >
               Cart
               {cartItemCount > 0 && (
                 <span className="ml-1 px-2 py-0.5 bg-vintage-rust text-vintage-cream text-xs rounded-full font-bold">

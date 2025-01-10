@@ -14,14 +14,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <img
         src={product.images[0]}
         alt={product.title}
-        className="w-full h-80 object-cover rounded-t-lg"
+        className="w-full h-80 object-cover"
       />
-      <div className="p-6 flex flex-col h-72">
+      <div className="py-6 px-3 flex flex-col h-72">
         <div>
           <h3 className="font-display text-xl font-bold mb-2 h-14 line-clamp-2 text-vintage-sepia">
             {product.title}
           </h3>
-          <span className="inline-block px-3 py-1 bg-vintage-paper text-vintage-coffee text-sm rounded-full mb-3 font-body">
+          <span className="inline-block px-3 py-1 bg-vintage-paper text-vintage-coffee text-sm mb-3 font-body">
             {product.category.name}
           </span>
           <p className="text-vintage-coffee/80 text-sm h-12 line-clamp-2 mb-6 font-body">
@@ -33,7 +33,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <div className="flex gap-3">
             <button
               onClick={() => addToCart(product)}
-              className="p-2 bg-vintage-rust text-vintage-cream rounded-md 
+              className="p-2 bg-vintage-rust text-vintage-cream
                        hover:bg-vintage-gold transition-all duration-300 
                        flex items-center justify-center w-10 h-10
                        shadow-md hover:shadow-lg transform hover:-translate-y-0.5"

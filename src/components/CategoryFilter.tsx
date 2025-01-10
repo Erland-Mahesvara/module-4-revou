@@ -14,7 +14,7 @@ const CategoryFilter = ({ categories }: CategoryFilterProps) => {
         {categories.map((category) => (
           <button
             key={category.id}
-            className="px-6 py-2 bg-vintage-paper text-vintage-coffee rounded-md
+            className="px-6 py-2 bg-vintage-paper text-vintage-coffee
                      hover:bg-vintage-rust hover:text-vintage-cream 
                      transition-all duration-300 font-body
                      border border-vintage-sepia/10 hover:border-transparent
