@@ -1,50 +1,87 @@
-# React + TypeScript + Vite
+# Seven Pennies E-commerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern e-commerce application built with React, TypeScript, and Vite, featuring a vintage-inspired design theme.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Seven Pennies is a responsive e-commerce platform that offers a seamless shopping experience with a unique vintage aesthetic. The application is built using modern web technologies and follows best practices for performance and user experience.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Product Browsing
 
-- Configure the top-level `parserOptions` property like this:
+- Product grid layout with cards showing product images, titles, and prices
+- Category filtering functionality
+- Product search functionality in the navigation bar
+- Responsive design that works on both desktop and mobile devices
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Product Details
+
+- Detailed product view with larger images
+- Product description and specifications
+- Price information
+- Cart button for easy access
+
+### Navigation
+
+- Clean and intuitive navigation bar
+- Brand logo with home link
+- Search functionality
+- Quick access to Login/Register pages
+- Cart link
+
+### Shopping Cart
+
+- View cart contents
+- Static cart display with example items
+- Clean and organized cart layout
+
+### Authentication Pages
+
+- Login page
+- Registration page
+- User account management
+
+### Design
+
+- Vintage-inspired color scheme
+- Consistent styling throughout the application
+- Responsive layout that adapts to different screen sizes
+- Interactive elements with hover effects
+- Clean typography with custom font families
+
+## Technical Stack
+
+- **Frontend Framework**: React with TypeScript
+- **Build Tool**: Vite
+- **Styling**: TailwindCSS
+- **Routing**: React Router
+- **State Management**: React Hooks
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. Start the development server:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+npm run dev
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+4. Open your browser and navigate to the local server address shown in the terminal
+
+## Project Structure
+
+```
+src/
+├── components/         # Reusable UI components
+├── pages/             # Page components
+├── assets/            # Static assets
+├── types/             # TypeScript type definitions
+└── utils/             # Utility functions
 ```
