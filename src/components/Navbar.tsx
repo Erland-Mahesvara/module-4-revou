@@ -17,11 +17,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center h-16">
+    <nav className="bg-vintage-cream border-b border-vintage-sepia/20 shadow-md">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center h-20">
           <div className="w-48">
-            <Link to="/" className="text-2xl font-bold text-blue-600">
+            <Link
+              to="/"
+              className="text-3xl font-display font-bold text-vintage-sepia hover:text-vintage-gold transition-colors"
+            >
               ShopSmart 🛒
             </Link>
           </div>
@@ -34,11 +37,11 @@ const Navbar = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search products..."
-                  className="w-full px-4 py-2 pl-10 pr-8 border rounded-lg focus:outline-none focus:border-blue-500"
+                  className="input w-full"
                 />
                 <button
                   type="submit"
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-vintage-sepia/60"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -59,20 +62,17 @@ const Navbar = () => {
             </form>
           </div>
 
-          <div className="w-48 flex items-center justify-end space-x-4">
-            <Link to="/login" className="text-gray-700 hover:text-blue-600">
+          <div className="w-48 flex items-center justify-end space-x-6">
+            <Link to="/login" className="nav-link">
               Login
             </Link>
-            <Link to="/register" className="text-gray-700 hover:text-blue-600">
+            <Link to="/register" className="nav-link">
               Register
             </Link>
-            <Link
-              to="/cart"
-              className="text-gray-700 hover:text-blue-600 flex items-center"
-            >
+            <Link to="/cart" className="nav-link flex items-center">
               Cart
               {cartItemCount > 0 && (
-                <span className="ml-1 px-2 py-0.5 bg-blue-600 text-white text-xs rounded-full">
+                <span className="ml-1 px-2 py-0.5 bg-vintage-rust text-vintage-cream text-xs rounded-full font-bold">
                   {cartItemCount}
                 </span>
               )}

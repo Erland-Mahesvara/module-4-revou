@@ -10,32 +10,33 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const { addToCart } = useCart();
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="card transform hover:scale-[1.02] transition-all duration-300">
       <img
         src={product.images[0]}
         alt={product.title}
-        className="w-full h-80 object-cover"
+        className="w-full h-80 object-cover rounded-t-lg"
       />
       <div className="p-6 flex flex-col h-72">
         <div>
-          <h3 className="text-lg font-semibold mb-2 h-14 line-clamp-2">
+          <h3 className="font-display text-xl font-bold mb-2 h-14 line-clamp-2 text-vintage-sepia">
             {product.title}
           </h3>
-          <span className="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full mb-3">
+          <span className="inline-block px-3 py-1 bg-vintage-paper text-vintage-coffee text-sm rounded-full mb-3 font-body">
             {product.category.name}
           </span>
-          <p className="text-gray-600 text-sm h-12 line-clamp-2 mb-6">
+          <p className="text-vintage-coffee/80 text-sm h-12 line-clamp-2 mb-6 font-body">
             {product.description}
           </p>
         </div>
         <div className="flex items-center justify-between gap-2">
-          <span className="px-3 py-1.5 text-xl font-bold text-blue-600 bg-gray-50 rounded-lg">
-            ${product.price}
-          </span>
-          <div className="flex gap-2">
+          <span className="price-tag">${product.price}</span>
+          <div className="flex gap-3">
             <button
               onClick={() => addToCart(product)}
-              className="p-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center w-9 h-9"
+              className="p-2 bg-vintage-rust text-vintage-cream rounded-md 
+                       hover:bg-vintage-gold transition-all duration-300 
+                       flex items-center justify-center w-10 h-10
+                       shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               title="Add to Cart"
             >
               <svg
@@ -50,7 +51,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             </button>
             <Link
               to={`/product/${product.id}`}
-              className="px-3 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="btn flex items-center"
             >
               View Details
             </Link>

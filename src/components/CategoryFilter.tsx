@@ -6,13 +6,19 @@ interface CategoryFilterProps {
 
 const CategoryFilter = ({ categories }: CategoryFilterProps) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow w-full">
-      <h3 className="text-lg font-semibold mb-4">Categories</h3>
+    <div className="card w-full">
+      <h3 className="font-display text-2xl font-bold mb-6 text-vintage-sepia border-b border-vintage-gold/30 pb-2">
+        Categories
+      </h3>
       <div className="flex flex-wrap gap-3">
         {categories.map((category) => (
           <button
             key={category.id}
-            className="px-6 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-blue-500 hover:text-white transition-colors"
+            className="px-6 py-2 bg-vintage-paper text-vintage-coffee rounded-md
+                     hover:bg-vintage-rust hover:text-vintage-cream 
+                     transition-all duration-300 font-body
+                     border border-vintage-sepia/10 hover:border-transparent
+                     shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
           >
             {category.name}
           </button>

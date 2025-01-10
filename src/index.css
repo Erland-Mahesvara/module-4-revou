@@ -1,6 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-vintage-cream font-body text-vintage-coffee bg-vintage-texture;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold text-vintage-sepia;
+  }
+  h1 {
+    @apply text-4xl mb-6 border-b-2 border-vintage-gold/30 pb-2;
+  }
+  h2 {
+    @apply text-3xl mb-4;
+  }
+  h3 {
+    @apply text-2xl mb-3;
+  }
+  a {
+    @apply text-vintage-rust hover:text-vintage-gold transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 bg-vintage-rust text-vintage-cream rounded-md 
+           hover:bg-vintage-gold transition-all duration-300 
+           shadow-md hover:shadow-lg transform hover:-translate-y-0.5
+           border border-vintage-sepia/20;
+  }
+  .card {
+    @apply bg-vintage-cream shadow-lg rounded-lg p-6 
+           border border-vintage-sepia/10 hover:shadow-xl 
+           transition-shadow duration-300
+           backdrop-blur-sm backdrop-brightness-105;
+  }
+  .input {
+    @apply border-2 border-vintage-sepia/20 rounded-md px-4 py-2 
+           bg-vintage-paper/50 text-vintage-coffee
+           focus:outline-none focus:border-vintage-gold
+           focus:ring-2 focus:ring-vintage-gold/20
+           placeholder-vintage-sepia/50;
+  }
+  .nav-link {
+    @apply text-vintage-sepia hover:text-vintage-gold 
+           transition-colors duration-200 
+           border-b-2 border-transparent hover:border-vintage-gold;
+  }
+  .price-tag {
+    @apply text-vintage-rust font-display font-bold text-xl;
+  }
+}
 
 @layer utilities {
   .line-clamp-2 {
