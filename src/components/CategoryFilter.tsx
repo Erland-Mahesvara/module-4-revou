@@ -33,17 +33,19 @@ const CategoryFilter = () => {
   if (error) return <div className="p-4 text-red-500">{error}</div>;
 
   return (
-    <div className="w-64 bg-white shadow-md p-4">
-      <h2 className="text-lg font-semibold mb-4">Categories</h2>
-      <div className="space-y-2">
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            className="w-full text-left px-4 py-2 rounded hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
-          >
-            {category.name}
-          </button>
-        ))}
+    <div className="w-64">
+      <div className="bg-white shadow-md p-4">
+        <h2 className="text-lg font-semibold mb-4">Categories</h2>
+        <div className="space-y-2">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              className="w-full text-left px-4 py-2 rounded hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -43,20 +43,33 @@ const ProductList = () => {
             <img
               src={product.images[0]}
               alt={product.title}
-              className="w-full h-48 object-cover"
+              className="w-full h-72 object-cover"
             />
             <div className="p-4">
               <h3 className="text-lg font-semibold mb-2">{product.title}</h3>
               <p className="text-gray-600 mb-2 line-clamp-2">
                 {product.description}
               </p>
-              <div className="flex justify-between items-center">
+              <div className="flex flex-wrap gap-2 justify-between items-center">
                 <span className="text-lg font-bold text-indigo-600">
                   ${product.price}
                 </span>
-                <button className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
-                  Add to Cart
-                </button>
+                <div className="flex gap-2">
+                  <button className="bg-indigo-600 text-white px-2 py-2 rounded hover:bg-indigo-700 flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24"
+                      viewBox="0 -960 960 960"
+                      width="24"
+                      fill="#e8eaed"
+                    >
+                      <path d="M465-613v-123H341v-60h124v-123h60v123h123v60H525v123h-60ZM289.79-80Q260-80 239-101.21t-21-51Q218-182 239.21-203t51-21Q320-224 341-202.79t21 51Q362-122 340.79-101t-51 21Zm404 0Q664-80 643-101.21t-21-51Q622-182 643.21-203t51-21Q724-224 745-202.79t21 51Q766-122 744.79-101t-51 21ZM62-820v-60h116l170 364h287.71L796-796h67L701-493q-11 19-28.56 30.5T634-451H331l-56 104h491v60H284q-37.66 0-57.33-30T224-378l64-118-148-324H62Z" />
+                    </svg>
+                  </button>
+                  <button className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">
+                    View Details
+                  </button>
+                </div>
               </div>
             </div>
           </div>
