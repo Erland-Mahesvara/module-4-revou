@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import CategoryFilter from "./components/CategoryFilter";
 import ProductList from "./components/ProductList";
@@ -7,6 +8,9 @@ import Cart from "./components/Cart";
 import { CartProvider } from "./context/CartContext";
 
 function App() {
+  const [selectedCategoryId, setSelectedCategoryId] = useState<number | null>(
+    null
+  );
   return (
     <CartProvider>
       <BrowserRouter>
@@ -18,8 +22,11 @@ function App() {
                 path="/"
                 element={
                   <div className="flex gap-6">
-                    <CategoryFilter />
-                    <ProductList />
+                    <CategoryFilter
+                      selectedCategoryId={selectedCategoryId}
+                      onCategorySelect={setSelectedCategoryId}
+                    />
+                    <ProductList selectedCategoryId={selectedCategoryId} />
                   </div>
                 }
               />

@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import { Product } from "../types";
 import { useCart } from "../context/CartContext";
 
-const ProductList = () => {
+interface ProductListProps {
+  selectedCategoryId: number | null;
+}
+
+const ProductList = ({ selectedCategoryId }: ProductListProps) => {
   const { addToCart } = useCart();
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
@@ -35,10 +39,14 @@ const ProductList = () => {
   if (loading) return <div className="p-4">Loading products...</div>;
   if (error) return <div className="p-4 text-red-500">{error}</div>;
 
+  const filteredProducts = selectedCategoryId
+    ? products.filter((product) => product.category.id === selectedCategoryId)
+    : products;
+
   return (
     <div className="flex-1 px-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <div
             key={product.id}
             className="bg-white rounded-lg shadow-md overflow-hidden"

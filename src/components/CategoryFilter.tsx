@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import { Category } from "../types";
 
-const CategoryFilter = () => {
+interface CategoryFilterProps {
+  onCategorySelect: (categoryId: number | null) => void;
+  selectedCategoryId: number | null;
+}
+
+const CategoryFilter = ({
+  onCategorySelect,
+  selectedCategoryId,
+}: CategoryFilterProps) => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -37,10 +45,26 @@ const CategoryFilter = () => {
       <div className="bg-white shadow-md p-4">
         <h2 className="text-lg font-semibold mb-4">Categories</h2>
         <div className="space-y-2">
+          <button
+            key="all"
+            className={`w-full text-left px-4 py-2 rounded transition-colors ${
+              selectedCategoryId === null
+                ? "bg-indigo-100 text-indigo-700"
+                : "hover:bg-indigo-50 hover:text-indigo-600"
+            }`}
+            onClick={() => onCategorySelect(null)}
+          >
+            All Categories
+          </button>
           {categories.map((category) => (
             <button
               key={category.id}
-              className="w-full text-left px-4 py-2 rounded hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+              className={`w-full text-left px-4 py-2 rounded transition-colors ${
+                selectedCategoryId === category.id
+                  ? "bg-indigo-100 text-indigo-700"
+                  : "hover:bg-indigo-50 hover:text-indigo-600"
+              }`}
+              onClick={() => onCategorySelect(category.id)}
             >
               {category.name}
             </button>
